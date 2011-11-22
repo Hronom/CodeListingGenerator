@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWizard</class>
+ <widget class="QWizard" name="MainWizard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Code Listing Generator Wizard</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="CodeListingGenerator.qrc">
+    <normaloff>:/main/CodeListingGenerator.png</normaloff>:/main/CodeListingGenerator.png</iconset>
+  </property>
+  <property name="options">
+   <set>QWizard::HaveHelpButton</set>
+  </property>
+ </widget>
+ <resources>
+  <include location="CodeListingGenerator.qrc"/>
+ </resources>
+ <connections/>
+</ui>
