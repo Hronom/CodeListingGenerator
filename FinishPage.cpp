@@ -16,9 +16,10 @@ FinishPage::~FinishPage()
 
 void FinishPage::initializePage()
 {
+    bool xTry;
     QFile xListingFile;
     xListingFile.setFileName(this->field("SaveFilePath").toString());
-    xListingFile.open(QIODevice::WriteOnly);
+    xTry = xListingFile.open(QIODevice::WriteOnly);
     QTextStream xFileStream(&xListingFile);
 
     for(int i=0; i<mStringList.count(); i++)
@@ -26,7 +27,7 @@ void FinishPage::initializePage()
         QFileInfo xFileInfo(mStringList[i]);
         QFile xSourceFile(mStringList[i]);
 
-        xSourceFile.open(QIODevice::ReadOnly);
+        xTry = xSourceFile.open(QIODevice::ReadOnly);
         if(i != 0) xFileStream<<endl;
         xFileStream<<xFileInfo.fileName().toAscii();
         xFileStream<<endl;
@@ -35,6 +36,11 @@ void FinishPage::initializePage()
     }
 
     xListingFile.close();
+
+    if(xTry == true)
+        mUI->label->setText("<b>"+tr("Работа завершена без ошибок.")+"</b>");
+    else
+        mUI->label->setText("<b>"+tr("Работа завершена с ошибками.")+"</b>");
 }
 
 void FinishPage::setFilesList(QStringList xStringList)

@@ -1,20 +1,20 @@
-#include "SelectFilesPage.h"
-#include "ui_SelectFilesPage.h"
+#include "SelectingFilesPage.h"
+#include "ui_SelectingFilesPage.h"
 #include <QDir>
 #include <QDirIterator>
 #include <QLabel>
 
-SelectFilesPage::SelectFilesPage(QWidget *xParent) : QWizardPage(xParent), mUI(new Ui::SelectFilesPage)
+SelectingFilesPage::SelectingFilesPage(QWidget *xParent) : QWizardPage(xParent), mUI(new Ui::SelectingFilesPage)
 {
     mUI->setupUi(this);
 }
 
-SelectFilesPage::~SelectFilesPage()
+SelectingFilesPage::~SelectingFilesPage()
 {
     delete mUI;
 }
 
-QStringList SelectFilesPage::getFilesList()
+QStringList SelectingFilesPage::getFilesList()
 {
     QStringList xFilesList;
 
@@ -24,12 +24,12 @@ QStringList SelectFilesPage::getFilesList()
     return xFilesList;
 }
 
-void SelectFilesPage::initializePage()
+void SelectingFilesPage::initializePage()
 {
     fillFilesList();
 }
 
-void SelectFilesPage::fillFilesList()
+void SelectingFilesPage::fillFilesList()
 {
     mUI->listWidget_2->clear();
     QString xDirectoryPath = this->field("FolderPath").toString();
@@ -46,7 +46,7 @@ void SelectFilesPage::fillFilesList()
     }
 }
 
-void SelectFilesPage::on_addExtensionButton_clicked()
+void SelectingFilesPage::on_addExtensionButton_clicked()
 {
     mUI->listWidget->addItem(mUI->lineEdit->text());
     mUI->lineEdit->setText("");
@@ -54,7 +54,14 @@ void SelectFilesPage::on_addExtensionButton_clicked()
     fillFilesList();
 }
 
-void SelectFilesPage::on_pushButton_clicked()
+void SelectingFilesPage::on_pushButton_clicked()
 {
-    mUI->listWidget->takeItem(mUI->listWidget->currentRow());
+    QListWidgetItem *xListWidgetItem;
+    xListWidgetItem = mUI->listWidget->takeItem(mUI->listWidget->currentRow());
+
+    if(xListWidgetItem != 0)
+    {
+        delete xListWidgetItem;
+        fillFilesList();
+    }
 }

@@ -11,13 +11,19 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>WizardPage</string>
+   <string/>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+  <property name="title">
+   <string>Результат работы генератора</string>
+  </property>
+  <attribute name="pageId">
+   <string notr="true">4</string>
+  </attribute>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Работа завершена</string>
+      <string/>
      </property>
     </widget>
    </item>

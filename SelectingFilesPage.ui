@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SelectFilesPage</class>
- <widget class="QWizardPage" name="SelectFilesPage">
+ <class>SelectingFilesPage</class>
+ <widget class="QWizardPage" name="SelectingFilesPage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,8 +17,14 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>WizardPage</string>
+   <string/>
   </property>
+  <property name="title">
+   <string>Редактирование списка файлов входящих в листинг кода</string>
+  </property>
+  <attribute name="pageId">
+   <string notr="true">2</string>
+  </attribute>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QGroupBox" name="groupBox">

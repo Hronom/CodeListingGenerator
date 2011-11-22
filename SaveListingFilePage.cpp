@@ -1,19 +1,19 @@
-#include "SaveListFilePage.h"
-#include "ui_SaveListFilePage.h"
+#include "SaveListingFilePage.h"
+#include "ui_SaveListingFilePage.h"
 #include <QFileDialog>
 
-SaveListFilePage::SaveListFilePage(QWidget *xParent): QWizardPage(xParent), mUI(new Ui::SaveListFilePage)
+SaveListingFilePage::SaveListingFilePage(QWidget *xParent): QWizardPage(xParent), mUI(new Ui::SaveListingFilePage)
 {
     mUI->setupUi(this);
     this->registerField("SaveFilePath*", mUI->lineEdit);
 }
 
-SaveListFilePage::~SaveListFilePage()
+SaveListingFilePage::~SaveListingFilePage()
 {
     delete mUI;
 }
 
-void SaveListFilePage::on_browseButton_clicked()
+void SaveListingFilePage::on_browseButton_clicked()
 {    
     mUI->lineEdit->setText(QFileDialog::getSaveFileName(this,
                                                         tr("Сохранить файл листинга"),

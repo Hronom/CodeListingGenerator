@@ -1,22 +1,22 @@
-#ifndef SELECTFILESPAGE_H
-#define SELECTFILESPAGE_H
+#ifndef SELECTINGFILESPAGE_H
+#define SELECTINGFILESPAGE_H
 
 #include <QWizardPage>
 #include <QStringList>
 
 namespace Ui {
-    class SelectFilesPage;
+    class SelectingFilesPage;
 }
 
-class SelectFilesPage : public QWizardPage
+class SelectingFilesPage : public QWizardPage
 {
     Q_OBJECT
 private:
-    Ui::SelectFilesPage *mUI;
+    Ui::SelectingFilesPage *mUI;
 
 public:
-    explicit SelectFilesPage(QWidget *xParent = 0);
-    ~SelectFilesPage();
+    explicit SelectingFilesPage(QWidget *xParent = 0);
+    ~SelectingFilesPage();
 
     QStringList getFilesList();
 
@@ -29,4 +29,4 @@ private slots:
     void on_pushButton_clicked();
 };
 
-#endif // SELECTFILESPAGE_H
+#endif // SELECTINGFILESPAGE_H

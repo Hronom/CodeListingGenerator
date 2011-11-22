@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Code Listing Generator Wizard</string>
+   <string>Code Listing Generator</string>
   </property>
   <property name="windowIcon">
    <iconset resource="CodeListingGenerator.qrc">

@@ -2,10 +2,10 @@
 #define MAINWIZARD_H
 
 #include <QWizard>
-#include "SettingSourcesPage.h"
-#include "SelectFilesPage.h"
+#include "SelectingSourcesPage.h"
+#include "SelectingFilesPage.h"
 #include "ChooseFilesOrderPage.h"
-#include "SaveListFilePage.h"
+#include "SaveListingFilePage.h"
 #include "FinishPage.h"
 
 namespace Ui {
@@ -18,10 +18,10 @@ class MainWizard : public QWizard
 private:
     Ui::MainWizard *mUI;
 
-    SettingSourcesPage *mSettingSourcesPage;
-    SelectFilesPage *mSelectFilesPage;
+    SelectingSourcesPage *mSelectingSourcesPage;
+    SelectingFilesPage *mSelectingFilesPage;
     ChooseFilesOrderPage *mChooseFilesOrderPage;
-    SaveListFilePage *mSaveListFilePage;
+    SaveListingFilePage *mSaveListingFilePage;
     FinishPage *mFinishPage;
 
 public:

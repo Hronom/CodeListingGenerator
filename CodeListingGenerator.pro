@@ -6,35 +6,40 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     MainWizard.cpp \
-    SettingSourcesPage.cpp \
-    SelectFilesPage.cpp \
+    SelectingSourcesPage.cpp \
+    SelectingFilesPage.cpp \
     ChooseFilesOrderPage.cpp \
-    SaveListFilePage.cpp \
+    SaveListingFilePage.cpp \
     FinishPage.cpp
 
 HEADERS  += \
     MainWizard.h \
-    SettingSourcesPage.h \
-    SelectFilesPage.h \
+    SelectingSourcesPage.h \
+    SelectingFilesPage.h \
     ChooseFilesOrderPage.h \
-    SaveListFilePage.h \
+    SaveListingFilePage.h \
     FinishPage.h
 
 FORMS    += \
     MainWizard.ui \
-    SettingSourcesPage.ui \
-    SelectFilesPage.ui \
+    SelectingSourcesPage.ui \
+    SelectingFilesPage.ui \
     ChooseFilesOrderPage.ui \
-    SaveListFilePage.ui \
+    SaveListingFilePage.ui \
     FinishPage.ui
 
 RESOURCES += \
     CodeListingGenerator.qrc
 
+RC_FILE = CodeListingGenerator.rc
+
 CODEC = Windows-1251
 CODECFORSRC = Windows-1251
 
-OTHER_FILES +=
+TRANSLATIONS = CodeListingGenerator_en_EN.ts
+
+
+
 
 
 
