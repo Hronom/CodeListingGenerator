@@ -3,7 +3,6 @@ QT       += core gui
 TARGET = CodeListingGenerator
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
     MainWizard.cpp \
     SelectingSourcesPage.cpp \
@@ -35,6 +34,7 @@ RC_FILE = CodeListingGenerator.rc
 
 CODEC = Windows-1251
 CODECFORSRC = Windows-1251
+CODECFORTR = Windows-1251
 
 TRANSLATIONS = CodeListingGenerator_en_EN.ts
 
