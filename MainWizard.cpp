@@ -7,6 +7,7 @@ MainWizard::MainWizard(QWidget *xParent) : QWizard(xParent), mUI(new Ui::MainWiz
     this->setButtonText(QWizard::NextButton, tr("Далее"));
     this->setButtonText(QWizard::CancelButton, tr("Отмена"));
     this->setButtonText(QWizard::HelpButton, tr("О программе"));
+    this->setButtonText(QWizard::FinishButton, tr("Финиш"));
 
     mUI->setupUi(this);
 
@@ -52,12 +53,20 @@ int MainWizard::nextId() const
 void MainWizard::helpButton_clicked()
 {
     QString xString;
-    xString.append("<b>Code Listing Generator 0.0.1</b>");
-    xString.append("<hr>");
-    xString.append(tr("Автор: "));
-    xString.append("Hronom");
-    xString.append("<br>");
-    xString.append("email: hronom@gmail.com");
+    xString.append("<p><b>Code Listing Generator 0.0.1</b></p>");
+
+    xString.append("<p>");
+    xString.append(tr("Сайт программы:"));
+    xString.append(" <a href='http://hronom.github.com/CodeListingGenerator/'>http://hronom.github.com/CodeListingGenerator</a>");
+    xString.append("</p>");
+
+    xString.append("<p>");
+    xString.append(tr("Автор:"));
+    xString.append(" Hronom");
+    xString.append("</p>");
+
+    xString.append("<p> Email: <a href='mailto:hronom@gmail.com'>hronom@gmail.com</a></p>");
+    xString.append("<p> Blog: <a href='http://hronom.blogspot.com/'>http://hronom.blogspot.com</a></p>");
 
     QMessageBox::about(this, tr("О программе"), xString);
 }

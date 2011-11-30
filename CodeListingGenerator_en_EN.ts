@@ -47,14 +47,24 @@
     </message>
     <message>
         <location filename="MainWizard.cpp" line="9"/>
-        <location filename="MainWizard.cpp" line="62"/>
+        <location filename="MainWizard.cpp" line="71"/>
         <source>О программе</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="MainWizard.cpp" line="57"/>
-        <source>Автор: </source>
-        <translation>Author: </translation>
+        <location filename="MainWizard.cpp" line="10"/>
+        <source>Финиш</source>
+        <translation>Finish</translation>
+    </message>
+    <message>
+        <location filename="MainWizard.cpp" line="59"/>
+        <source>Сайт программы:</source>
+        <translation>Website:</translation>
+    </message>
+    <message>
+        <location filename="MainWizard.cpp" line="64"/>
+        <source>Автор:</source>
+        <translation>Author:</translation>
     </message>
 </context>
 <context>
