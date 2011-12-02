@@ -36,35 +36,78 @@
         <translation>Code Listing Generator</translation>
     </message>
     <message>
-        <location filename="MainWizard.cpp" line="7"/>
+        <location filename="MainWizard.cpp" line="8"/>
         <source>Далее</source>
         <translation>Next</translation>
     </message>
     <message>
-        <location filename="MainWizard.cpp" line="8"/>
+        <location filename="MainWizard.cpp" line="9"/>
         <source>Отмена</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="MainWizard.cpp" line="9"/>
-        <location filename="MainWizard.cpp" line="71"/>
+        <location filename="MainWizard.cpp" line="10"/>
+        <location filename="MainWizard.cpp" line="116"/>
         <source>О программе</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="MainWizard.cpp" line="10"/>
+        <location filename="MainWizard.cpp" line="11"/>
         <source>Финиш</source>
         <translation>Finish</translation>
     </message>
     <message>
-        <location filename="MainWizard.cpp" line="59"/>
+        <location filename="MainWizard.cpp" line="62"/>
+        <location filename="MainWizard.cpp" line="85"/>
+        <location filename="MainWizard.cpp" line="92"/>
+        <source>Проверка наличия новой версии программы</source>
+        <translation>Check for new version</translation>
+    </message>
+    <message>
+        <location filename="MainWizard.cpp" line="63"/>
+        <source>У вас последняя версия программы</source>
+        <translation>You have the latest version of the program</translation>
+    </message>
+    <message>
+        <location filename="MainWizard.cpp" line="68"/>
+        <source>Доступна новая версия программы</source>
+        <oldsource>Доступна новая вресия программы</oldsource>
+        <translation>A new version of the program</translation>
+    </message>
+    <message>
+        <location filename="MainWizard.cpp" line="72"/>
+        <source>Доступна версия:</source>
+        <translation>Version is available:</translation>
+    </message>
+    <message>
+        <location filename="MainWizard.cpp" line="77"/>
+        <source>Ссылка для скачивания:</source>
+        <translation>Download Link:</translation>
+    </message>
+    <message>
+        <location filename="MainWizard.cpp" line="93"/>
+        <source>Не удалось проверить наличие новой версии программы</source>
+        <translation>Unable to check for new version</translation>
+    </message>
+    <message>
+        <location filename="MainWizard.cpp" line="93"/>
+        <source>Ошибка:</source>
+        <translation>Error:</translation>
+    </message>
+    <message>
+        <location filename="MainWizard.cpp" line="102"/>
         <source>Сайт программы:</source>
         <translation>Website:</translation>
     </message>
     <message>
-        <location filename="MainWizard.cpp" line="64"/>
+        <location filename="MainWizard.cpp" line="107"/>
         <source>Автор:</source>
         <translation>Author:</translation>
+    </message>
+    <message>
+        <location filename="MainWizard.cpp" line="123"/>
+        <source>Проверить наличие новой версии</source>
+        <translation>Check for new version</translation>
     </message>
 </context>
 <context>

@@ -7,9 +7,10 @@
 #include "ChooseFilesOrderPage.h"
 #include "SaveListingFilePage.h"
 #include "FinishPage.h"
+#include "NewVersionChecker.h"
 
 namespace Ui {
-    class MainWizard;
+class MainWizard;
 }
 
 class MainWizard : public QWizard
@@ -17,6 +18,8 @@ class MainWizard : public QWizard
     Q_OBJECT
 private:
     Ui::MainWizard *mUI;
+
+    NewVersionChecker *mNewVersionChecker;
 
     SelectingSourcesPage *mSelectingSourcesPage;
     SelectingFilesPage *mSelectingFilesPage;
@@ -31,7 +34,11 @@ public:
     int nextId() const;
 
 private slots:
+    void versionChecked(QString xCurrentVersion, QString xDownloadLink);
+    void versionNotChecked(QString xError);
+
     void helpButton_clicked();
+    void checkVersionButton_clicked();
 };
 
 #endif // MAINWIZARD_H
