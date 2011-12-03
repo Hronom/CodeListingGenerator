@@ -3,6 +3,7 @@
 #include <QLocale>
 #include <QTranslator>
 #include "MainWizard.h"
+#include "GlobalDefinitions.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,8 +12,8 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForTr(QTextCodec::codecForName("Windows-1251"));//установка нужной кодировки для Tr
 
     QApplication xApp(argc, argv);
-    xApp.setApplicationName("CodeListingGenerator");
-    xApp.setApplicationVersion("0.0.1");
+    xApp.setApplicationName(program_name);
+    xApp.setApplicationVersion(program_version);
 
     QString xLocale = QLocale::system().name();
     QTranslator xTranslator;

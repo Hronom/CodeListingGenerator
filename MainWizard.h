@@ -5,6 +5,7 @@
 #include "SelectingSourcesPage.h"
 #include "SelectingFilesPage.h"
 #include "ChooseFilesOrderPage.h"
+#include "ChooseListingFormatPage.h"
 #include "SaveListingFilePage.h"
 #include "FinishPage.h"
 
@@ -21,6 +22,7 @@ private:
     SelectingSourcesPage *mSelectingSourcesPage;
     SelectingFilesPage *mSelectingFilesPage;
     ChooseFilesOrderPage *mChooseFilesOrderPage;
+    ChooseListingFormatPage *mChooseListingFormatPage;
     SaveListingFilePage *mSaveListingFilePage;
     FinishPage *mFinishPage;
 

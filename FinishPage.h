@@ -13,6 +13,7 @@ class FinishPage : public QWizardPage
 private:
     Ui::FinishPage *mUI;
     QStringList mStringList;
+    QString mFormatedString;
 
 public:
     explicit FinishPage(QWidget *xParent = 0);
@@ -20,7 +21,7 @@ public:
 
     void initializePage();
     void setFilesList(QStringList xStringList);
-
+    void setFormatedString(QString xString);
 };
 
 #endif // FINISHPAGE_H

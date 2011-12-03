@@ -15,14 +15,16 @@ MainWizard::MainWizard(QWidget *xParent) : QWizard(xParent), mUI(new Ui::MainWiz
     mSelectingSourcesPage = new SelectingSourcesPage(this);
     mSelectingFilesPage = new SelectingFilesPage(this);
     mChooseFilesOrderPage = new ChooseFilesOrderPage(this);
+    mChooseListingFormatPage = new ChooseListingFormatPage(this);
     mSaveListingFilePage = new SaveListingFilePage(this);
     mFinishPage = new FinishPage(this);
 
     this->setPage(1, mSelectingSourcesPage);
     this->setPage(2, mSelectingFilesPage);
     this->setPage(3, mChooseFilesOrderPage);
-    this->setPage(4, mSaveListingFilePage);
-    this->setPage(5, mFinishPage);
+    this->setPage(4, mChooseListingFormatPage);
+    this->setPage(5, mSaveListingFilePage);
+    this->setPage(6, mFinishPage);
 
     connect(this,SIGNAL(helpRequested()),this,SLOT(helpButton_clicked()));
 }
@@ -44,8 +46,11 @@ int MainWizard::nextId() const
     case 3:
         return 4;
     case 4:
-        mFinishPage->setFilesList(mChooseFilesOrderPage->getFilesList());
         return 5;
+    case 5:
+        mFinishPage->setFilesList(mChooseFilesOrderPage->getFilesList());
+        mFinishPage->setFormatedString(mChooseListingFormatPage->getFormatedString());
+        return 6;
     default:
         return -1;
     }

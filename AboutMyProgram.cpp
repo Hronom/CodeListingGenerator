@@ -1,12 +1,13 @@
 #include "AboutMyProgram.h"
 #include "ui_AboutMyProgram.h"
+#include "GlobalDefinitions.h"
 
 AboutMyProgram::AboutMyProgram(QWidget *xParent) : QDialog(xParent), mUI(new Ui::AboutMyProgram)
 {
     mUI->setupUi(this);
 
-    mUI->programName->setText(tr("Имя программы:")+" Code Listing Generator");
-    mUI->programVersion->setText(tr("Версия программы:")+" 0.0.1");
+    mUI->programName->setText(tr("Имя программы:") + " " + program_name);
+    mUI->programVersion->setText(tr("Версия программы:") + " " + program_version);
     mUI->programSite->setText(tr("Сайт программы:")+" <a href='http://hronom.github.com/CodeListingGenerator/'>http://hronom.github.com/CodeListingGenerator</a>");
 
     mUI->programAuthor->setText(tr("Автор:") + " Hronom");
@@ -25,7 +26,7 @@ AboutMyProgram::~AboutMyProgram()
 
 void AboutMyProgram::versionChecked(QString xCurrentVersion, QString xDownloadLink)
 {
-    if(xCurrentVersion == "0.0.1")
+    if(xCurrentVersion == program_version)
         mUI->actualVersion->setText(tr("У вас последняя версия программы"));
     else
     {

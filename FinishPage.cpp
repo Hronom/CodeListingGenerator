@@ -20,7 +20,6 @@ void FinishPage::initializePage()
     QFile xListingFile;
     xListingFile.setFileName(this->field("SaveFilePath").toString());
     xTry = xListingFile.open(QIODevice::WriteOnly);
-    QTextStream xFileStream(&xListingFile);
 
     for(int i=0; i<mStringList.count(); i++)
     {
@@ -28,10 +27,11 @@ void FinishPage::initializePage()
         QFile xSourceFile(mStringList[i]);
 
         xTry = xSourceFile.open(QIODevice::ReadOnly);
-        if(i != 0) xFileStream<<endl;
-        xFileStream<<xFileInfo.fileName().toAscii();
-        xFileStream<<endl;
-        xFileStream<<xSourceFile.readAll();
+        QString xString = mFormatedString;
+        xString.replace("%FileName", xFileInfo.baseName());
+        xString.replace("%FileSuffix", xFileInfo.suffix());
+        xString.replace("%FileContent", xSourceFile.readAll());
+        xListingFile.write(xString.toAscii());
         xSourceFile.close();
     }
 
@@ -46,4 +46,9 @@ void FinishPage::initializePage()
 void FinishPage::setFilesList(QStringList xStringList)
 {
     mStringList = xStringList;
+}
+
+void FinishPage::setFormatedString(QString xString)
+{
+    mFormatedString = xString;
 }

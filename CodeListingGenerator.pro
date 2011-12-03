@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     ChooseFilesOrderPage.cpp \
     SaveListingFilePage.cpp \
     FinishPage.cpp \
-    AboutMyProgram.cpp
+    AboutMyProgram.cpp \
+    ChooseListingFormatPage.cpp
 
 HEADERS  += \
     MainWizard.h \
@@ -32,7 +33,9 @@ HEADERS  += \
     ChooseFilesOrderPage.h \
     SaveListingFilePage.h \
     FinishPage.h \
-    AboutMyProgram.h
+    AboutMyProgram.h \
+    ChooseListingFormatPage.h \
+    GlobalDefinitions.h
 
 FORMS    += \
     MainWizard.ui \
@@ -41,7 +44,8 @@ FORMS    += \
     ChooseFilesOrderPage.ui \
     SaveListingFilePage.ui \
     FinishPage.ui \
-    AboutMyProgram.ui
+    AboutMyProgram.ui \
+    ChooseListingFormatPage.ui
 
 RESOURCES += \
     CodeListingGenerator.qrc
@@ -53,6 +57,10 @@ CODECFORSRC = Windows-1251
 CODECFORTR = Windows-1251
 
 TRANSLATIONS = CodeListingGenerator_en_EN.ts
+
+
+
+
 
 
 

@@ -1,0 +1,275 @@
+<hr>
+<p><b>AboutMyProgram</b></p>
+<hr>
+<b>Контент файла:</b>
+<pre>
+#ifndef ABOUTMYPROGRAM_H
+#define ABOUTMYPROGRAM_H
+
+#include <QDialog>
+#include "NewVersionChecker.h"
+
+namespace Ui {
+class AboutMyProgram;
+}
+
+class AboutMyProgram : public QDialog
+{
+    Q_OBJECT
+private:
+    Ui::AboutMyProgram *mUI;
+
+    NewVersionChecker *mNewVersionChecker;
+
+public:
+    AboutMyProgram(QWidget *xParent = 0);
+    ~AboutMyProgram();
+
+private slots:
+    void versionChecked(QString xCurrentVersion, QString xDownloadLink);
+    void versionNotChecked(QString xError);
+    void on_checkVersionButton_clicked();
+};
+
+#endif // ABOUTMYPROGRAM_H
+
+</pre><hr>
+<p><b>ChooseFilesOrderPage</b></p>
+<hr>
+<b>Контент файла:</b>
+<pre>
+#ifndef CHOOSEFILESORDERPAGE_H
+#define CHOOSEFILESORDERPAGE_H
+
+#include <QWizardPage>
+
+namespace Ui {
+    class ChooseFilesOrderPage;
+}
+
+class ChooseFilesOrderPage : public QWizardPage
+{
+    Q_OBJECT
+private:
+    Ui::ChooseFilesOrderPage *mUI;
+
+public:
+    explicit ChooseFilesOrderPage(QWidget *xParent = 0);
+    ~ChooseFilesOrderPage();
+
+    void setFilesList(QStringList xFilesList);
+    QStringList getFilesList();
+
+private slots:
+    void on_upArrowButton_clicked();
+    void on_downArrowButton_clicked();
+};
+
+#endif // CHOOSEFILESORDERPAGE_H
+
+</pre><hr>
+<p><b>ChooseListingFormatPage</b></p>
+<hr>
+<b>Контент файла:</b>
+<pre>
+#ifndef CHOOSELISTINGFORMATPAGE_H
+#define CHOOSELISTINGFORMATPAGE_H
+
+#include <QWizardPage>
+
+namespace Ui {
+    class ChooseListingFormatPage;
+}
+
+class ChooseListingFormatPage : public QWizardPage
+{
+    Q_OBJECT
+private:
+    Ui::ChooseListingFormatPage *mUI;
+
+public:
+    explicit ChooseListingFormatPage(QWidget *xParent = 0);
+    ~ChooseListingFormatPage();
+
+    QString getFormatedString();
+};
+
+#endif // CHOOSELISTINGFORMATPAGE_H
+
+</pre><hr>
+<p><b>FinishPage</b></p>
+<hr>
+<b>Контент файла:</b>
+<pre>
+#ifndef FINISHPAGE_H
+#define FINISHPAGE_H
+
+#include <QWizardPage>
+
+namespace Ui {
+class FinishPage;
+}
+
+class FinishPage : public QWizardPage
+{
+    Q_OBJECT
+private:
+    Ui::FinishPage *mUI;
+    QStringList mStringList;
+    QString mFormatedString;
+
+public:
+    explicit FinishPage(QWidget *xParent = 0);
+    ~FinishPage();
+
+    void initializePage();
+    void setFilesList(QStringList xStringList);
+    void setFormatedString(QString xString);
+};
+
+#endif // FINISHPAGE_H
+
+</pre><hr>
+<p><b>MainWizard</b></p>
+<hr>
+<b>Контент файла:</b>
+<pre>
+#ifndef MAINWIZARD_H
+#define MAINWIZARD_H
+
+#include <QWizard>
+#include "SelectingSourcesPage.h"
+#include "SelectingFilesPage.h"
+#include "ChooseFilesOrderPage.h"
+#include "ChooseListingFormatPage.h"
+#include "SaveListingFilePage.h"
+#include "FinishPage.h"
+
+namespace Ui {
+class MainWizard;
+}
+
+class MainWizard : public QWizard
+{
+    Q_OBJECT
+private:
+    Ui::MainWizard *mUI;
+
+    SelectingSourcesPage *mSelectingSourcesPage;
+    SelectingFilesPage *mSelectingFilesPage;
+    ChooseFilesOrderPage *mChooseFilesOrderPage;
+    ChooseListingFormatPage *mChooseListingFormatPage;
+    SaveListingFilePage *mSaveListingFilePage;
+    FinishPage *mFinishPage;
+
+public:
+    explicit MainWizard(QWidget *xParent = 0);
+    ~MainWizard();
+
+    int nextId() const;
+
+private slots:
+    void helpButton_clicked();
+};
+
+#endif // MAINWIZARD_H
+
+</pre><hr>
+<p><b>SaveListingFilePage</b></p>
+<hr>
+<b>Контент файла:</b>
+<pre>
+#ifndef SAVELISTINGFILEPAGE_H
+#define SAVELISTINGFILEPAGE_H
+
+#include <QWizardPage>
+
+namespace Ui {
+    class SaveListingFilePage;
+}
+
+class SaveListingFilePage : public QWizardPage
+{
+    Q_OBJECT
+private:
+    Ui::SaveListingFilePage *mUI;
+
+public:
+    explicit SaveListingFilePage(QWidget *xParent = 0);
+    ~SaveListingFilePage();
+
+private slots:
+    void on_browseButton_clicked();
+};
+
+#endif // SAVELISTINGFILEPAGE_H
+
+</pre><hr>
+<p><b>SelectingFilesPage</b></p>
+<hr>
+<b>Контент файла:</b>
+<pre>
+#ifndef SELECTINGFILESPAGE_H
+#define SELECTINGFILESPAGE_H
+
+#include <QWizardPage>
+#include <QStringList>
+
+namespace Ui {
+    class SelectingFilesPage;
+}
+
+class SelectingFilesPage : public QWizardPage
+{
+    Q_OBJECT
+private:
+    Ui::SelectingFilesPage *mUI;
+
+public:
+    explicit SelectingFilesPage(QWidget *xParent = 0);
+    ~SelectingFilesPage();
+
+    QStringList getFilesList();
+
+private:
+    void initializePage();
+    void fillFilesList();
+
+private slots:
+    void on_addExtensionButton_clicked(); 
+    void on_pushButton_clicked();
+};
+
+#endif // SELECTINGFILESPAGE_H
+
+</pre><hr>
+<p><b>SelectingSourcesPage</b></p>
+<hr>
+<b>Контент файла:</b>
+<pre>
+#ifndef SELECTINGSOURCESPAGE_H
+#define SELECTINGSOURCESPAGE_H
+
+#include <QWizardPage>
+
+namespace Ui {
+class SelectingSourcesPage;
+}
+
+class SelectingSourcesPage : public QWizardPage
+{
+    Q_OBJECT
+private:
+    Ui::SelectingSourcesPage *mUI;
+
+public:
+    explicit SelectingSourcesPage(QWidget *xParent = 0);
+    ~SelectingSourcesPage();
+
+private slots:
+    void on_toolButton_clicked();
+};
+
+#endif // SELECTINGSOURCESPAGE_H
+
+</pre>

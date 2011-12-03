@@ -19,9 +19,6 @@
   <property name="subTitle">
    <string/>
   </property>
-  <attribute name="pageId">
-   <string notr="true">1</string>
-  </attribute>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="0">
     <widget class="QLineEdit" name="lineEdit">

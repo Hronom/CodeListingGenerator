@@ -16,9 +16,6 @@
   <property name="title">
    <string>Выбор порядка записи файлов в файл листинга</string>
   </property>
-  <attribute name="pageId">
-   <string notr="true">3</string>
-  </attribute>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" rowspan="2">
     <widget class="QListWidget" name="listWidget"/>
