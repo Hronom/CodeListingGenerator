@@ -3,6 +3,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QTextStream>
+#include <QDebug>
 
 FinishPage::FinishPage(QWidget *xParent): QWizardPage(xParent), mUI(new Ui::FinishPage)
 {
@@ -30,8 +31,21 @@ void FinishPage::initializePage()
         QString xString = mFormatedString;
         xString.replace("%FileName", xFileInfo.baseName());
         xString.replace("%FileSuffix", xFileInfo.suffix());
-        xString.replace("%FileContent", xSourceFile.readAll());
-        xListingFile.write(xString.toAscii());
+
+        QStringList xStringList;
+        xStringList = xString.split("%FileContent");
+
+        for(int i=0; i<xStringList.size(); i++)
+        {
+            xListingFile.write(xStringList.at(i).toAscii());
+            if((xStringList.size()-i) != 1)
+            {
+                while(xSourceFile.atEnd() != true)
+                    xListingFile.write(xSourceFile.read(150));
+                xSourceFile.reset();
+            }
+        }
+
         xSourceFile.close();
     }
 
